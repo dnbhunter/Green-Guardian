@@ -1,0 +1,17 @@
+{
+  "name": "Green Guardian - DNB AI Sustainability Copilot",
+  "short_name": "Green Guardian",
+  "description": "AI-powered sustainability copilot for DNB",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#22c55e",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
