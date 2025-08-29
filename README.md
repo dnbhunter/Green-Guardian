@@ -23,12 +23,8 @@ Green Guardian is a unified AI assistant designed to help DNB "make life simpler
 ### Technology Stack
 
 **Frontend:**
-- React 18 + TypeScript + Vite
-- Tailwind CSS + Headless UI
-- Zustand (State Management)
-- React Hook Form + Zod (Forms & Validation)
-- Chart.js + Leaflet (Visualization)
-- Azure MSAL (Authentication)
+- HTML5, CSS3, Vanilla JavaScript
+- Served directly by FastAPI
 
 **Backend:**
 - Python 3.11 + FastAPI + Pydantic v2
@@ -54,7 +50,6 @@ Green Guardian is a unified AI assistant designed to help DNB "make life simpler
 
 ### Prerequisites
 
-- Node.js 18+
 - Python 3.11+
 - Docker & Docker Compose
 - Azure CLI
@@ -67,7 +62,6 @@ git clone https://github.com/dnb/green-guardian.git
 cd green-guardian
 
 # Install dependencies
-cd frontend && npm install && cd ..
 cd backend && pip install -r requirements.txt && cd ..
 ```
 
@@ -115,12 +109,6 @@ DATABASE_URL=postgresql://user:password@localhost:5432/green_guardian
 
 # Redis Cache
 REDIS_URL=redis://localhost:6379/0
-
-# Frontend Environment
-VITE_API_BASE_URL=http://localhost:8000
-VITE_AZURE_CLIENT_ID=your-azure-ad-client-id  
-VITE_AZURE_TENANT_ID=your-azure-ad-tenant-id
-VITE_APPINSIGHTS_CONNECTION_STRING=your-connection-string
 ```
 
 ### 3. Infrastructure Deployment
@@ -161,15 +149,8 @@ cd backend
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-**Frontend:**
-```bash
-cd frontend
-npm run dev
-```
-
 **Access the application:**
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:8000
+- Web Interface: http://localhost:8000
 - API Documentation: http://localhost:8000/docs
 
 ## 🐳 Docker Deployment
@@ -178,8 +159,7 @@ npm run dev
 # Build and run with Docker Compose
 docker-compose up --build
 
-# Or build individual images
-docker build -t green-guardian/frontend ./frontend
+# Or build the backend image
 docker build -t green-guardian/backend ./backend
 ```
 
@@ -265,20 +245,6 @@ docker build -t green-guardian/backend ./backend
 
 ## 🧪 Testing
 
-**Frontend Tests:**
-```bash
-cd frontend
-
-# Unit tests
-npm run test
-
-# E2E tests  
-npm run test:e2e
-
-# Component stories
-npm run storybook
-```
-
 **Backend Tests:**
 ```bash
 cd backend
@@ -338,20 +304,6 @@ requests
 ```
 
 ## 🔧 Configuration
-
-### Frontend Configuration
-
-```typescript
-// vite.config.ts
-export default defineConfig({
-  plugins: [react()],
-  server: {
-    proxy: {
-      '/api': 'http://localhost:8000'
-    }
-  }
-})
-```
 
 ### Backend Configuration  
 
