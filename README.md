@@ -409,9 +409,9 @@ graph TB
 ```
 
 flowchart TD
+
     A[📊 ESG Data Sources] --> B[🔍 Data Ingestion Pipeline]
     B --> C[🗃️ Azure Cognitive Search Index]
-    
     D[👤 User Query] --> E[🤖 Green Guardian AI Agent]
     E --> F[🔎 Hybrid Search]
     F --> C
