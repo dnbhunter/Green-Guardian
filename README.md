@@ -408,6 +408,58 @@ graph TB
     ESG --> EXT
 ```
 
+flowchart TD
+    A[📊 ESG Data Sources] --> B[🔍 Data Ingestion Pipeline]
+    B --> C[🗃️ Azure Cognitive Search Index]
+    
+    D[👤 User Query] --> E[🤖 Green Guardian AI Agent]
+    E --> F[🔎 Hybrid Search]
+    F --> C
+    C --> G[📄 Relevant Documents]
+    
+    G --> H[🧠 Azure OpenAI GPT-4]
+    H --> I[📝 Raw AI Response]
+    I --> J[✨ Response Formatter]
+    J --> K[📋 Structured Output]
+    
+    K --> L[🌐 Web Interface]
+    L --> M[👥 DNB Users]
+    
+    subgraph "🏗️ Architecture Components"
+        N[⚡ FastAPI Backend]
+        O[🔐 Azure AD Authentication]
+        P[🎨 Beautiful Frontend]
+        Q[📊 Analytics & Monitoring]
+    end
+    
+    subgraph "🎯 User Types"
+        R[💼 Portfolio Managers]
+        S[⚖️ Risk Analysts]
+        T[📋 Compliance Officers]
+    end
+    
+    M --> R
+    M --> S
+    M --> T
+    
+    subgraph "📈 Output Types"
+        U[⚠️ Risk Assessments]
+        V[🏭 Sector Analysis]
+        W[📋 Action Items]
+        X[📊 ESG Insights]
+    end
+    
+    K --> U
+    K --> V
+    K --> W
+    K --> X
+    
+    style A fill:#e1f5fe
+    style E fill:#f3e5f5
+    style J fill:#e8f5e8
+    style L fill:#fff3e0
+    style M fill:#fce4ec
+
 ## 📝 Contributing
 
 1. Fork the repository
